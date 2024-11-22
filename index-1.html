@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Form validation</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script-2.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <form action="" id="form">
+            <h1>Sign In</h1>
+            <div id="input-group">
+                <label for="email">Email Id</label>
+                <input type="email" id="loginEmail" name="email" required>
+                <div class="Eerror"></div>
+            </div>
+            <div id="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="loginPassword" name="password">
+                <div class="Perror"></div>
+            </div>
+            <button type="button" id="submit" onclick="login()">Sign in</button>
+            <p id="signIn"><small>New user - <a href="./index.html">Sign up</a>
+                </small></p>
+        </form>
+    </div>
+
+
+    </div>
+</body>
+
+</html>
