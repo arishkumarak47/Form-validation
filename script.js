@@ -1,8 +1,8 @@
-let form = ""
-let Uname = ""
-let email = ""
-let password = ""
-let cpassword = ""
+let form = "";
+let Uname = "";
+let email = "";
+let password = "";
+let cpassword = "";
 let done = "";
 let dataArr = [];
 
@@ -13,7 +13,6 @@ function check() {
   password = document.querySelector("#password");
   cpassword = document.querySelector("#cpassword");
   done = true;
-
 
   validatePasswordInputs();
   validateUnameInputs();
@@ -33,6 +32,7 @@ function check() {
     data.password = password.value.trim();
     dataArr.push(data);
     console.log(dataArr);
+    console.log(data);
     document.querySelector("#form").reset();
   }
 }
@@ -47,8 +47,11 @@ function validatePasswordInputs() {
   } else if (passwordVal !== cpasswordVal) {
     done = false;
     document.querySelector(".Cerror").innerHTML = "password does not match";
-  } else {
+  } else if (passwordVal == cpasswordVal) {
+    document.querySelector(".Perror").innerHTML = " ";
     document.querySelector(".Cerror").innerHTML = " ";
+  } else {
+    return;
   }
 }
 function validateUnameInputs() {
@@ -66,10 +69,10 @@ function validateEmailInputs() {
   var validRegex =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   if (validRegex.test(emailVal) == true) {
-   
+    document.querySelector(".Eerror").innerHTML = " ";
   } else {
+    done = false;
     document.querySelector(".Eerror").innerHTML =
       "Please enter correct email format";
-    done = false;
   }
 }
